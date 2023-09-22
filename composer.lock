@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc7d7ef363bf1e16caeb1175a2f5cbcf",
+    "content-hash": "041b3ed829ed6d6bd29314f6a6ed9911",
     "packages": [
         {
             "name": "async-aws/core",
@@ -28332,20 +28332,20 @@
         },
         {
             "name": "spryker/oauth-client",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker/oauth-client.git",
-                "reference": "794f552e08e85fa1fa5a085d9e8feddd41597f17"
+                "reference": "488378e1e30ba28299ab1b1eee92aaf1c4ba4497"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker/oauth-client/zipball/794f552e08e85fa1fa5a085d9e8feddd41597f17",
-                "reference": "794f552e08e85fa1fa5a085d9e8feddd41597f17",
+                "url": "https://api.github.com/repos/spryker/oauth-client/zipball/488378e1e30ba28299ab1b1eee92aaf1c4ba4497",
+                "reference": "488378e1e30ba28299ab1b1eee92aaf1c4ba4497",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.4",
+                "php": ">=8.0",
                 "spryker/kernel": "^3.30.0",
                 "spryker/message-broker-extension": "^1.0.0",
                 "spryker/oauth-client-extension": "^1.0.0",
@@ -28374,9 +28374,9 @@
             ],
             "description": "OauthClient module",
             "support": {
-                "source": "https://github.com/spryker/oauth-client/tree/1.1.0"
+                "source": "https://github.com/spryker/oauth-client/tree/1.2.0"
             },
-            "time": "2022-10-11T14:40:32+00:00"
+            "time": "2023-01-19T09:57:16+00:00"
         },
         {
             "name": "spryker/oauth-client-extension",
