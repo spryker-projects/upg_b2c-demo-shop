@@ -31,7 +31,7 @@ class OauthClientDependencyProvider extends SprykerOauthClientDependencyProvider
     protected function getAccessTokenRequestExpanderPlugins(): array
     {
         return [
-            new StoreReferenceAccessTokenRequestExpanderPlugin(),
+            new StoreReferenceAccessTokenRequestExpanderPlugin(), new Spryker\Zed\Store\Communication\Plugin\OauthClient\CurrentStoreReferenceAccessTokenRequestExpanderPlugin(),
         ];
     }
 }
