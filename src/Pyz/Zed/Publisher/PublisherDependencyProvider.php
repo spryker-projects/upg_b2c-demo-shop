@@ -266,4 +266,17 @@ class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
             new ProductCategoryWritePublisherPlugin(),
         ];
     }
+    /**
+     * @return array
+     */
+    public function getProductExportPlugins() : array
+    {
+        return [
+            new Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteExportedMessageBrokerPublisherPlugin(),
+            new Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteCreatedMessageBrokerPublisherPlugin(),
+            new Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteUpdatedMessageBrokerPublisherPlugin(),
+            new Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteDeletedMessageBrokerPublisherPlugin(),
+            new Spryker\Zed\Product\Communication\Plugin\Publisher\ProductAbstractUpdatedMessageBrokerPublisherPlugin(),
+        ];
+    }
 }

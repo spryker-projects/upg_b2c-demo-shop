@@ -172,4 +172,13 @@ class ProductDependencyProvider extends SprykerProductDependencyProvider
             new ProductBundleDeactivatorProductConcreteAfterUpdatePlugin(),
         ];
     }
+    /**
+     * @return array<\Spryker\Zed\ProductExtension\Dependency\Plugin\ProductConcreteMergerPluginInterface>
+     */
+    protected function getProductConcreteMergerPlugins() : array
+    {
+        return [
+            new Spryker\Zed\ProductImage\Communication\Plugin\Product\ImageSetProductConcreteMergerPlugin(),
+        ];
+    }
 }
