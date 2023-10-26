@@ -85,6 +85,7 @@ class CartDependencyProvider extends SprykerCartDependencyProvider
             new ConfiguredBundleGroupKeyItemExpanderPlugin(),
             new ProductUrlItemExpanderPlugin(),
             new SanitizeCartShipmentItemExpanderPlugin(),
+            new Spryker\Zed\Cart\Communication\Plugin\Cart\GroupKeyWithCartIdentifierItemExpanderPlugin(),
         ];
     }
 

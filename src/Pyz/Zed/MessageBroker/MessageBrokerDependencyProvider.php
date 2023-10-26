@@ -75,6 +75,7 @@ class MessageBrokerDependencyProvider extends SprykerMessageBrokerDependencyProv
             new AssetAddedMessageHandlerPlugin(),
             new AssetUpdatedMessageHandlerPlugin(),
             new AssetDeletedMessageHandlerPlugin(),
+            new Spryker\Zed\Product\Communication\Plugin\MessageBroker\InitializeProductExportMessageHandlerPlugin(),
         ];
     }
 
@@ -88,6 +89,7 @@ class MessageBrokerDependencyProvider extends SprykerMessageBrokerDependencyProv
             new TimestampMessageAttributeProviderPlugin(),
             new StoreReferenceMessageAttributeProviderPlugin(),
             new AccessTokenMessageAttributeProviderPlugin(),
+            new Spryker\Zed\Store\Communication\Plugin\MessageBroker\CurrentStoreReferenceMessageAttributeProviderPlugin(),
         ];
     }
 
@@ -107,7 +109,7 @@ class MessageBrokerDependencyProvider extends SprykerMessageBrokerDependencyProv
     public function getExternalValidatorPlugins(): array
     {
         return [
-            new StoreReferenceMessageValidatorPlugin(),
+            new StoreReferenceMessageValidatorPlugin(), new Spryker\Zed\Store\Communication\Plugin\MessageBroker\StoreReferenceMessageValidatorPlugin(),
         ];
     }
 }
