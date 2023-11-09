@@ -76,6 +76,11 @@ use Spryker\Zed\Publisher\PublisherDependencyProvider as SprykerPublisherDepende
 use Spryker\Zed\SalesReturnSearch\Communication\Plugin\Publisher\ReturnReason\ReturnReasonDeletePublisherPlugin;
 use Spryker\Zed\SalesReturnSearch\Communication\Plugin\Publisher\ReturnReason\ReturnReasonWritePublisherPlugin;
 use Spryker\Zed\SalesReturnSearch\Communication\Plugin\Publisher\ReturnReasonPublisherTriggerPlugin;
+use Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteExportedMessageBrokerPublisherPlugin;
+use Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteCreatedMessageBrokerPublisherPlugin;
+use Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteUpdatedMessageBrokerPublisherPlugin;
+use Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteDeletedMessageBrokerPublisherPlugin;
+use Spryker\Zed\Product\Communication\Plugin\Publisher\ProductAbstractUpdatedMessageBrokerPublisherPlugin;
 
 class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
 {
@@ -264,6 +269,19 @@ class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
             new CategoryUrlAndResourceCategorynodeWritePublisherPlugin(),
             new ProductCategoryWriteForPublishingPublisherPlugin(),
             new ProductCategoryWritePublisherPlugin(),
+        ];
+    }
+    /**
+     * @return array
+     */
+    public function getProductExportPlugins() : array
+    {
+        return [
+            new ProductConcreteExportedMessageBrokerPublisherPlugin(),
+            new ProductConcreteCreatedMessageBrokerPublisherPlugin(),
+            new ProductConcreteUpdatedMessageBrokerPublisherPlugin(),
+            new ProductConcreteDeletedMessageBrokerPublisherPlugin(),
+            new ProductAbstractUpdatedMessageBrokerPublisherPlugin(),
         ];
     }
 }
