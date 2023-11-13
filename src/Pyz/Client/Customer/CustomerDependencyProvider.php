@@ -13,6 +13,7 @@ use Spryker\Client\Customer\Plugin\CustomerAddressSessionUpdatePlugin;
 use Spryker\Client\Customer\Plugin\CustomerTransferSessionRefreshPlugin;
 use Spryker\Client\CustomerAccessPermission\Plugin\Customer\CustomerAccessSecuredPatternRulePlugin;
 use Spryker\Client\PersistentCart\Plugin\GuestCartUpdateCustomerSessionSetPlugin;
+use Spryker\Client\Customer\Plugin\Customer\CustomerAddressDefaultAddressChangePlugin;
 
 class CustomerDependencyProvider extends SprykerCustomerDependencyProvider
 {
@@ -43,7 +44,7 @@ class CustomerDependencyProvider extends SprykerCustomerDependencyProvider
     protected function getDefaultAddressChangePlugins()
     {
         return [
-            new CustomerAddressSessionUpdatePlugin(),
+            new CustomerAddressDefaultAddressChangePlugin(),
         ];
     }
 
