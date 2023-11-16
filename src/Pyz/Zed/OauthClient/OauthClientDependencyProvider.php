@@ -11,6 +11,7 @@ use Spryker\Zed\OauthAuth0\Communication\Plugin\OauthClient\Auth0OauthAccessToke
 use Spryker\Zed\OauthClient\OauthClientDependencyProvider as SprykerOauthClientDependencyProvider;
 use Spryker\Zed\OauthDummy\Communication\Plugin\OauthClient\DummyOauthAccessTokenProviderPlugin;
 use Spryker\Zed\StoreReference\Communication\Plugin\OauthClient\StoreReferenceAccessTokenRequestExpanderPlugin;
+use Spryker\Zed\Store\Communication\Plugin\OauthClient\CurrentStoreReferenceAccessTokenRequestExpanderPlugin;
 
 class OauthClientDependencyProvider extends SprykerOauthClientDependencyProvider
 {
@@ -31,7 +32,7 @@ class OauthClientDependencyProvider extends SprykerOauthClientDependencyProvider
     protected function getAccessTokenRequestExpanderPlugins(): array
     {
         return [
-            new StoreReferenceAccessTokenRequestExpanderPlugin(),
+            new StoreReferenceAccessTokenRequestExpanderPlugin(), new CurrentStoreReferenceAccessTokenRequestExpanderPlugin(),
         ];
     }
 }
