@@ -2908,3 +2908,9 @@ sales-order-threshold.hard-minimum-threshold.us.usd.message,You should add items
 sales-order-threshold.hard-maximum-threshold.us.usd.message,The cart value cannot be higher than {{threshold}}. Please remove some items to proceed with the order,en_US
 sales-order-threshold.soft-minimum-threshold.us.usd.message,"You need to add items for {{threshold}} to pass a recommended threshold, but if you want can proceed to checkout.",en_US
 countries.iso.US,United States of America,en_US
+customer.salutation.invalid,Salutation is invalid,en_US
+customer.salutation.invalid,Anrede ist ungültig,de_DE
+customer.billing_address.salutation.invalid,Salutation is invalid,en_US
+customer.billing_address.salutation.invalid,Anrede ist ungültig,de_DE
+customer.shipping_address.salutation.invalid,Salutation is invalid,en_US
+customer.shipping_address.salutation.invalid,Anrede ist ungültig,de_DE
