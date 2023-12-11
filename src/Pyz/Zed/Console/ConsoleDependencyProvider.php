@@ -160,6 +160,11 @@ use SprykerSdk\Spryk\Console\SprykDumpConsole;
 use SprykerSdk\Spryk\Console\SprykRunConsole;
 use SprykerSdk\Zed\ComposerConstrainer\Communication\Console\ComposerConstraintConsole;
 use Stecman\Component\Symfony\Console\BashCompletion\CompletionCommand;
+use Spryker\Zed\MessageBrokerAws\Communication\Console\MessageBrokerAwsSqsQueuesCreatorConsole;
+use Spryker\Zed\MessageBrokerAws\Communication\Console\MessageBrokerAwsSnsTopicsCreatorConsole;
+use Spryker\Zed\MessageBrokerAws\Communication\Console\MessageBrokerSqsToSnsSubscriberConsole;
+use Spryker\Zed\Development\Communication\Console\GenerateGlueBackendIdeAutoCompletionConsole;
+use Spryker\Zed\Development\Communication\Console\RemoveGlueBackendIdeAutoCompletionConsole;
 
 /**
  * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
@@ -344,7 +349,14 @@ class ConsoleDependencyProvider extends SprykerConsoleDependencyProvider
         ];
 
         $propelCommands = $container->getLocator()->propel()->facade()->getConsoleCommands();
-        $commands = array_merge($commands, $propelCommands);
+        $commands = array_merge($commands, $propelCommands, [
+            new MessageBrokerDebugConsole(),
+            new MessageBrokerAwsSqsQueuesCreatorConsole(),
+            new MessageBrokerAwsSnsTopicsCreatorConsole(),
+            new MessageBrokerSqsToSnsSubscriberConsole(),
+            new GenerateGlueBackendIdeAutoCompletionConsole(),
+            new RemoveGlueBackendIdeAutoCompletionConsole(),
+        ]);
 
         if ($this->getConfig()->isPyzDevelopmentConsoleCommandsEnabled()) {
             $commands[] = new CodeTestConsole();
@@ -405,6 +417,9 @@ class ConsoleDependencyProvider extends SprykerConsoleDependencyProvider
 
             $commands[] = new MaintenanceEnableConsole();
             $commands[] = new MaintenanceDisableConsole();
+        }
+        if ($this->getConfig()->isDevelopmentConsoleCommandsEnabled()) {
+            $commands[] = new MessageBrokerDebugConsole();
         }
 
         return $commands;
