@@ -565,10 +565,13 @@ $config[GlueApplicationConstants::GLUE_APPLICATION_CORS_ALLOW_ORIGIN] = getenv('
 $config[OmsConstants::PROCESS_LOCATION] = [
     OmsConfig::DEFAULT_PROCESS_LOCATION,
     APPLICATION_ROOT_DIR . '/vendor/spryker/payment/config/Zed/Oms',
+    APPLICATION_ROOT_DIR . '/vendor/spryker/payment/config/Zed/Oms',
 ];
 $config[OmsConstants::ACTIVE_PROCESSES] = [];
 $config[SalesConstants::PAYMENT_METHOD_STATEMACHINE_MAPPING] = [
     PaymentConfig::PAYMENT_FOREIGN_PROVIDER => 'B2CStateMachine01',
+    \SprykerEco\Zed\Payone\PayoneConfig::PAYMENT_METHOD_CREDIT_CARD => 'PayoneCreditCardPartialOperations',
+    \SprykerEco\Zed\Payone\PayoneConfig::PAYMENT_METHOD_INSTANT_ONLINE_TRANSFER => 'PayoneOnlineTransferPartialOperations',
 ];
 
 // ----------------------------------------------------------------------------
@@ -618,3 +621,7 @@ $config[AppCatalogGuiConstants::OAUTH_OPTION_AUDIENCE] = 'aop-atrs';
 $config[OauthClientConstants::OAUTH_PROVIDER_NAME_FOR_PAYMENT_AUTHORIZE] = OauthAuth0Config::PROVIDER_NAME;
 $config[OauthClientConstants::OAUTH_GRANT_TYPE_FOR_PAYMENT_AUTHORIZE] = OauthAuth0Config::GRANT_TYPE_CLIENT_CREDENTIALS;
 $config[OauthClientConstants::OAUTH_OPTION_AUDIENCE_FOR_PAYMENT_AUTHORIZE] = 'aop-app';
+
+$config[\Spryker\Shared\GlueBackendApiApplication\GlueBackendApiApplicationConstants::GLUE_BACKEND_API_HOST] = getenv('SPRYKER_GLUE_BACKEND_HOST');
+
+$config[\Spryker\Shared\GlueStorefrontApiApplication\GlueStorefrontApiApplicationConstants::GLUE_STOREFRONT_API_HOST] = getenv('SPRYKER_GLUE_STOREFRONT_HOST');

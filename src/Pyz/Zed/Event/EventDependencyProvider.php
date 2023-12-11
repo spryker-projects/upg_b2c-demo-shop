@@ -114,6 +114,7 @@ class EventDependencyProvider extends SprykerEventDependencyProvider
         $eventSubscriberCollection->add(new ConfigurableBundleTemplateImagePageSearchEventSubscriber());
 
         $eventSubscriberCollection->add(new PublisherSubscriber());
+        $eventSubscriberCollection->add(new AssetStorageEventSubscriber());
 
         return $eventSubscriberCollection;
     }
