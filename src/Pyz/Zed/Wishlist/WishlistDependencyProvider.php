@@ -9,6 +9,9 @@ namespace Pyz\Zed\Wishlist;
 
 use Spryker\Zed\ProductDiscontinued\Communication\Plugin\Wishlist\ProductDiscontinuedAddItemPreCheckPlugin;
 use Spryker\Zed\Wishlist\WishlistDependencyProvider as SprykerWishlistDependencyProvider;
+use Spryker\Zed\Availability\Communication\Plugin\Wishlist\AvailabilityWishlistItemExpanderPlugin;
+use Spryker\Zed\Availability\Communication\Plugin\Wishlist\SellableWishlistItemExpanderPlugin;
+use Spryker\Zed\PriceProduct\Communication\Plugin\Wishlist\PriceProductWishlistItemExpanderPlugin;
 
 class WishlistDependencyProvider extends SprykerWishlistDependencyProvider
 {
@@ -27,6 +30,17 @@ class WishlistDependencyProvider extends SprykerWishlistDependencyProvider
     {
         return [
             new ProductDiscontinuedAddItemPreCheckPlugin(), #ProductDiscontinuedFeature
+        ];
+    }
+    /**
+     * @return array<\Spryker\Zed\WishlistExtension\Dependency\Plugin\WishlistItemExpanderPluginInterface>
+     */
+    protected function getWishlistItemExpanderPlugins() : array
+    {
+        return [
+            new AvailabilityWishlistItemExpanderPlugin(),
+            new SellableWishlistItemExpanderPlugin(),
+            new PriceProductWishlistItemExpanderPlugin(),
         ];
     }
 }

@@ -14,6 +14,7 @@ use Spryker\Zed\DiscountPromotionsRestApi\Communication\Plugin\CartsRestApi\Disc
 use Spryker\Zed\ProductBundleCartsRestApi\Communication\Plugin\BundleItemQuoteItemReadValidatorPlugin;
 use Spryker\Zed\ProductOptionsRestApi\Communication\Plugin\CartsRestApi\ProductOptionCartItemMapperPlugin;
 use Spryker\Zed\SalesOrderThresholdsRestApi\Communication\Plugin\CartsRestApi\SalesOrderThresholdQuoteExpanderPlugin;
+use Spryker\Zed\PersistentCart\Communication\Plugin\CartsRestApi\QuoteCreatorPlugin as SprykerQuoteCreatorPlugin;
 
 class CartsRestApiDependencyProvider extends SprykerCartsRestApiDependencyProvider
 {
@@ -22,7 +23,7 @@ class CartsRestApiDependencyProvider extends SprykerCartsRestApiDependencyProvid
      */
     protected function getQuoteCreatorPlugin(): QuoteCreatorPluginInterface
     {
-        return new QuoteCreatorPlugin();
+        return new SprykerQuoteCreatorPlugin();
     }
 
     /**
