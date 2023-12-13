@@ -9,6 +9,7 @@ namespace Pyz\Zed\PriceProduct;
 
 use Spryker\Zed\PriceProduct\PriceProductDependencyProvider as SprykerPriceProductDependencyProvider;
 use Spryker\Zed\PriceProductVolume\Communication\Plugin\PriceProductExtension\PriceProductVolumeExtractorPlugin;
+use Spryker\Zed\PriceProductVolume\Communication\Plugin\PriceProduct\PriceProductVolumeValidatorPlugin;
 
 /**
  * Copyright © 2017-present Spryker Systems GmbH. All rights reserved.
@@ -23,6 +24,15 @@ class PriceProductDependencyProvider extends SprykerPriceProductDependencyProvid
     {
         return [
             new PriceProductVolumeExtractorPlugin(),
+        ];
+    }
+    /**
+     * @return array<\Spryker\Zed\PriceProductExtension\Dependency\Plugin\PriceProductValidatorPluginInterface>
+     */
+    protected function getPriceProductValidatorPlugins() : array
+    {
+        return [
+            new PriceProductVolumeValidatorPlugin(),
         ];
     }
 }
