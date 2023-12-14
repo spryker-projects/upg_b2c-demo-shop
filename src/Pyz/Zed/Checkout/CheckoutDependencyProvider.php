@@ -38,6 +38,8 @@ use Spryker\Zed\SalesOrderThreshold\Communication\Plugin\Checkout\SalesOrderThre
 use Spryker\Zed\SalesPayment\Communication\Plugin\Checkout\SalesPaymentCheckoutDoSaveOrderPlugin;
 use Spryker\Zed\Shipment\Communication\Plugin\Checkout\SalesOrderShipmentSavePlugin;
 use Spryker\Zed\ShipmentCheckoutConnector\Communication\Plugin\Checkout\ShipmentCheckoutPreCheckPlugin;
+use Spryker\Zed\Customer\Communication\Plugin\Checkout\CustomerSalutationCheckoutPreConditionPlugin;
+use Spryker\Zed\Customer\Communication\Plugin\Checkout\CustomerAddressSalutationCheckoutPreConditionPlugin;
 
 class CheckoutDependencyProvider extends SprykerCheckoutDependencyProvider
 {
@@ -63,6 +65,8 @@ class CheckoutDependencyProvider extends SprykerCheckoutDependencyProvider
             new PaymentMethodValidityCheckoutPreConditionPlugin(),
             new DuplicateOrderCheckoutPreConditionPlugin(),
             new ProductExistsCheckoutPreConditionPlugin(),
+            new CustomerSalutationCheckoutPreConditionPlugin(),
+            new CustomerAddressSalutationCheckoutPreConditionPlugin(),
         ];
     }
 
